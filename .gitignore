@@ -36,6 +36,7 @@ hs_err_pid*
 **/Servers
 **/.springBeans
 
+.project
 #IDEA
 **/.idea/
 **/*.iml
