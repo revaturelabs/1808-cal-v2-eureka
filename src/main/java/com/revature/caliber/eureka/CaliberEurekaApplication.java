@@ -16,12 +16,13 @@ public class CaliberEurekaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CaliberEurekaApplication.class, args);
 	}
-	
-	@Bean
-	public EurekaInstanceConfigBean eurekaInstanceConfig(InetUtils inetUtils) {
-	  EurekaInstanceConfigBean b = new EurekaInstanceConfigBean(inetUtils);
-	  AmazonInfo info = AmazonInfo.Builder.newBuilder().autoBuild("eureka");
-	  b.setDataCenterInfo(info);
-	  return b;
-	}
+
+// Disabled due to performance reasons also need to configure the aws secrets
+//	@Bean
+//	public EurekaInstanceConfigBean eurekaInstanceConfig(InetUtils inetUtils) {
+//	  EurekaInstanceConfigBean b = new EurekaInstanceConfigBean(inetUtils);
+//	  AmazonInfo info = AmazonInfo.Builder.newBuilder().autoBuild("eureka");
+//	  b.setDataCenterInfo(info);
+//	  return b;
+//	}
 }
