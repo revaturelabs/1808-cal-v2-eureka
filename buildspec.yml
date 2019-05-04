@@ -21,11 +21,8 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$SERVICE_NAME:$BUILD_ID
-      - echo Writing image definitions file...
-      - printf '[{"name":"%s","imageUri":"%s", "memory":350, "cpu":500}]' $SERVICE_NAME $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$SERVICE_NAME:$BUILD_ID > imagedefinitions.json
 artifacts:
   files:
-    - imagedefinitions.json
     - 'Dockerfile'
     - 'target/CaliberEureka-0.0.1-SNAPSHOT.jar'
     
