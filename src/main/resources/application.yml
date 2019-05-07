@@ -1,16 +1,23 @@
 spring:
   application:
     name: eureka
+server:
+  port: 8761
+  
+---
+spring:
+  profiles: dev
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+---
+spring:
+  profiles: prod
 eureka:
   instance:
     prefer-ip-address: true
   client:
     register-with-eureka: false
     fetch-registry: false
-logging:
-  level:
-    com:
-      netflix:
-        eureka: ALL
-server:
-  port: 8761
+  
